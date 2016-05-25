@@ -4,13 +4,17 @@ var rawTranslitData = require('./translit.json');
 
 var translitPairs = new Map(
   rawTranslitData.map(function(t){ 
-    return [new RegExp(t[0], 'g'), t[1]]
+    var en = t[0],
+        ru = t[1];
+    return [new RegExp('(@[a-zA-Z0-9_]*)?'+en, 'g'), ru];
   })
 );
 
 function latin2cyr(str) {
   translitPairs.forEach(function (ru, en) {
-    str = str.replace(en, ru);
+    str = str.replace(en, function(match, mention){
+      return mention ? match : ru;
+    });
   });
   return str;
 }
