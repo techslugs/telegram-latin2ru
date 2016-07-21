@@ -1,4 +1,5 @@
 'use strict';
+import strings
 
 var rawTranslitData = require('./translit.json');
 
@@ -13,7 +14,7 @@ var translitPairs = new Map(
 function latin2cyr(str) {
   translitPairs.forEach(function (ru, en) {
     str = str.replace(en, function(match, mention){
-      return mention ? match : ru;
+      return mention || strings.Contains('$', str) ? match : ru;
     });
   });
   return str;
