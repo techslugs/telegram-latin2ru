@@ -1,0 +1,6 @@
+deployment:
+  publish:
+    branch: master
+    commands:
+      - ./deploy.sh
+
