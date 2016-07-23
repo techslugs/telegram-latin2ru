@@ -1,25 +1,15 @@
 var latin2cyr = require('./latin2cyr');
 var translit = require('./translit.json');
+var assert = require('chai').assert;
 
-		//Results variables
-		var results = {
-				total: 0,
-				bad: 0
-			};
+function _test(ru, en){
+  describe('As a user, I want to transform', function(){
+    it(en+' in to '+ru, function(){
+      assert.equal(ru, latin2cyr(en));
+    });
+  });
+}
 
-		//Test func
-		function test(str, expected) {
-			results.total++
-			var res = latin2cyr(str)
-			if (res != expected) {
-				results.bad++;
-				//console.log("Expected " + expected + ", but was " + res);
-			}
-
-		}
-
-		//Tests
-		for (var i = 0; i < translit.length; i++) {
-			test(translit[i][0], translit[i][1]);
-		}
-		//console.log("Of " + results.total + " tests, " + results.bad + " failed, " + (results.total - results.bad) + " passed.");
+for(var i = 0; i < translit.length; i++){
+  _test(translit[i][1], translit[i][0]);
+}
