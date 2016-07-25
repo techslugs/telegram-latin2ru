@@ -10,15 +10,6 @@ function _test(ru, en){
   });
 }
 
-function _dontTranslateTest(en){
-  describe('As a user, I dont want to translate', function(){
-  	it('text in square brackets - '+en, function(){
-  		assert.equal('['+en+']', latin2cyr('['+en+']'));
-  	})
-  })
-}
-
 for(var i = 0; i < translit.length; i++){
   _test(translit[i][1], translit[i][0]);
-  _dontTranslateTest(translit[i][0]);
 }
