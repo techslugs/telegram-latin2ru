@@ -6,7 +6,7 @@ var translitPairs = new Map(
   rawTranslitData.map(function(t){ 
     var en = t[0],
         ru = t[1];
-    return [new RegExp('(\[[a-zA-Z0-9_-]\]*)?'+en, 'g'), ru];
+    return [new RegExp('(@[a-zA-Z0-9_-]*)?'+en, 'g'), ru];
   })
 );
 
