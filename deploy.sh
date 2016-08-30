@@ -15,4 +15,4 @@ if [ -z $OPENSHIFT_REMOTE ]; then
   exit 1
 fi
 
-git push ${OPENSHIFT_REMOTE} master:master
+git push -f ${OPENSHIFT_REMOTE} master:master
