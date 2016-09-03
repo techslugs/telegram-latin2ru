@@ -5,5 +5,6 @@ deployment:
   publish:
     branch: master
     commands:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
       - ./deploy.sh
 
