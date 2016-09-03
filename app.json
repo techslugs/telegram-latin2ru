@@ -1,0 +1,12 @@
+{
+  "name": "Latin2Ru-Telegram-Bot",
+  "description": "Inline transcriptor from latin to russian language",
+  "repository": "https://github.com/techslugs/telegram-latin2ru",
+  "keywords": ["inline", "bot", "telegram"],
+  "env": {
+    "TELEGRAM_TOKEN": {
+      "description": "Telegram HTTP bot API authentication token",
+      "value": "TOKEN_FROM_BOTFATHER"
+    }
+  }
+}
