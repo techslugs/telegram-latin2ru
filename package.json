@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "test": "mocha"
+    "test": "node test.js | tap-dot"
   },
   "dependencies": {
     "express": "^4.13.4",
@@ -14,7 +14,7 @@
   "author": "tmwh",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "tap-dot": "^1.0.5",
+    "tape": "^4.6.0"
   }
 }
